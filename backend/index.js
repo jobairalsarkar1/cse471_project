@@ -10,7 +10,7 @@ const courseRoutes = require("./routes/courseRoutes");
 // const sectionRoutes = require("./routes/sectionRoutes");
 // const classroomRoutes = require("./routes/classroomRoutes");
 // const consultationRoutes = require("./routes/consultationRoutes");
-// const advisingPanelRoutes = require("./routes/advisingPanelRoutes");
+const advisingPanelRoutes = require("./routes/advisingPanelRoutes");
 // const gradeSheetRoutes = require("./routes/gradeSheetRoutes");
 const path = require("path");
 
@@ -48,7 +48,7 @@ app.use("/api/courses", courseRoutes);
 // module 2
 // app.use("/api/classrooms", classroomRoutes);
 // app.use("/api/consultations", consultationRoutes);
-// app.use("/api/advising-panels", advisingPanelRoutes);
+app.use("/api/advising-panels", advisingPanelRoutes);
 // app.use("/api/grade-sheets", gradeSheetRoutes);
 
 // // Serve static files from the React app
