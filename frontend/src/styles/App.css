@@ -1,0 +1,56 @@
+:root {
+  --element-background-color: hsl(220, 37%, 100%);
+  --background-color: hsl(220, 37%, 97%);
+  --text-color: hsl(244, 44%, 14%);
+  --external-color: hsl(240, 100%, 90%);
+  --color-blue-1: #007bff;
+  /* --element-background-color: #000000;
+  --text-color: #ffffff;
+  --external-color: #11171f; */
+}
+
+/* html {
+  color-scheme: light dark;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* styles/App.css */
+.main-body-container {
+  display: flex;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.content-body-container {
+  width: 100%;
+  /* background-color: var(--background-color); */
+  background-color: var(--element-background-color);
+  /* display: flex; */
+  /* justify-content: center; */
+  height: calc(100vh - 4rem);
+  /* overflow-y: scroll; */
+}
+
+/* This one handles ScrollBard. */
+::-webkit-scrollbar {
+  display: block;
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+  background-color: #e8e8e8;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 0.5em;
+  height: 5%;
+  border-radius: 0.5rem;
+  background-color: #d8d8d8;
+}

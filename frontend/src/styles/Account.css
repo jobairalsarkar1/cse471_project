@@ -1,0 +1,136 @@
+.profile-container {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.profile-inner-container {
+  margin: auto;
+  width: 100%;
+}
+
+.profile-info-container {
+  padding: 1rem;
+  font-size: 0.8rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 60% auto;
+  border-radius: 0.35rem;
+  border: 0.095rem solid #dadce0;
+  background-color: var(--element-background-color);
+}
+
+.profile-info {
+  padding-top: 0.1rem;
+  display: flex;
+  gap: 0.3rem;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.profile-row {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 35% auto;
+  /* background-color: green; */
+}
+
+.profile-label {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #ffffff; */
+}
+
+.profile-value {
+  font-weight: 550;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  hyphens: auto;
+}
+
+.profile-value > a {
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.profile-picture-container {
+  display: flex;
+  justify-content: end;
+}
+
+.profile-picture-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.7rem;
+  border: 0.1rem solid #dadce0;
+  pointer-events: none;
+}
+
+.profile-picture-alternative {
+  width: 100px;
+  height: 100px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  background-color: #000000;
+  border: 0.1rem solid #dadce0;
+}
+
+@media (max-width: 400px) {
+  .profile-container {
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+  }
+
+  .profile-info {
+    gap: 0rem;
+    font-size: 0.6rem;
+    word-break: break-word;
+  }
+  /* .profile-label {
+    width: 60px;
+  } */
+
+  .profile-value > a {
+    font-size: 0.6rem;
+  }
+
+  .profile-picture-container img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .profile-picture-alternative {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 580px) {
+  .profile-info {
+    gap: 0.3rem;
+  }
+
+  .profile-picture-container img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-picture-alternative {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-inner-container {
+    width: 70%;
+  }
+
+  .profile-info-container {
+    font-size: 1rem;
+  }
+}
