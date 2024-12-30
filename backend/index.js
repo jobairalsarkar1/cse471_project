@@ -8,10 +8,10 @@ const userRoutes = require("./routes/userRoutes");
 const departmentRoutes = require("./routes/departmentRoutes");
 const courseRoutes = require("./routes/courseRoutes");
 // const sectionRoutes = require("./routes/sectionRoutes");
-// const classroomRoutes = require("./routes/classroomRoutes");
-// const consultationRoutes = require("./routes/consultationRoutes");
+const classroomRoutes = require("./routes/classroomRoutes");
+const consultationRoutes = require("./routes/consultationRoutes");
 const advisingPanelRoutes = require("./routes/advisingPanelRoutes");
-// const gradeSheetRoutes = require("./routes/gradeSheetRoutes");
+const gradeSheetRoutes = require("./routes/gradeSheetRoutes");
 const path = require("path");
 
 // Load Environment variables
@@ -46,10 +46,10 @@ app.use("/api/departments", departmentRoutes);
 app.use("/api/courses", courseRoutes);
 // app.use("/api/sections", sectionRoutes);
 // module 2
-// app.use("/api/classrooms", classroomRoutes);
-// app.use("/api/consultations", consultationRoutes);
+app.use("/api/classrooms", classroomRoutes);
+app.use("/api/consultations", consultationRoutes);
 app.use("/api/advising-panels", advisingPanelRoutes);
-// app.use("/api/grade-sheets", gradeSheetRoutes);
+app.use("/api/grade-sheets", gradeSheetRoutes);
 
 // // Serve static files from the React app
 // app.use(express.static(path.join(__dirname, "../frontend/build")));
