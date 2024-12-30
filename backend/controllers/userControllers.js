@@ -182,7 +182,7 @@ const forgetPassword = async (req, res) => {
   let user;
   try {
     user = await User.findOne({ email, ID });
-    // console.log(user);
+    // console.log("Inside: ", user);
     if (!user) {
       return res.status(404).json({ message: "User do not exist." });
     }

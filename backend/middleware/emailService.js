@@ -11,13 +11,15 @@ const oauth2Client = new OAuth2(
   "https://developers.google.com/oauthplayground"
 );
 
+// console.log("Client ID: ", process.env.CLIENT_ID);
+// console.log("Client Secrete: ", process.env.CLIENT_SECRET);
+// console.log("Refresh Token: ", process.env.REFRESH_TOKEN);
+
 oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
 const sendResetPasswordMail = async (userName, email, token) => {
-  // console.log("Email:", process.env.EMAIL);
-  // console.log("Password:", process.env.EMAIL_PASSWORD);
-
   const accessToken = await oauth2Client.getAccessToken();
+  // console.log("Token:", accessToken.token);
   const mailTransporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
@@ -35,8 +37,8 @@ const sendResetPasswordMail = async (userName, email, token) => {
     "../templates/resetPasswordMail.html"
   );
   const template = fs.readFileSync(templatePath, "utf-8");
-  // console.log(template);
-  const resetLink = `http://192.168.1.113:5000/reset-password/${token}`;
+  // console.log("Templage: ", template);
+  const resetLink = `http://localhost:5173/reset-password/${token}`;
   const emailHtml = template
     .replace("{{resetLink}}", resetLink)
     .replace("{{userName}}", userName);
