@@ -51,15 +51,18 @@ const getConsultations = async (req, res) => {
 
 const approveConsultation = async (req, res) => {
   const { consultationId, status } = req.body;
+  console.log("Phase 01: ");
   console.log(consultationId, status);
   try {
     const consultation = await Consultation.findById(consultationId)
       .populate("teacher")
       .populate("student");
+    console.log("Phase 02: Meething Link.");
     const meetLink = await generateMeetLink(
       consultation.teacher._id,
       consultation.consultationTime
     );
+    console.log("Phase 03: ", meetLink);
 
     if (!meetLink) {
       return res
@@ -72,6 +75,7 @@ const approveConsultation = async (req, res) => {
     await consultation.save();
     res.status(200).json({ message: "Consultation Approved", meetLink });
   } catch (error) {
+    console.log("Error Section.");
     res.status(500).json({ message: "Failed to Approve request." });
   }
 };
